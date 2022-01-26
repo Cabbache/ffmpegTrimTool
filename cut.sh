@@ -16,8 +16,8 @@ fi
 INC=1
 while read line
 do
-	START=$(echo -n $line | cut -d',' -f1)
-	END=$(echo -n $line | cut -d',' -f2)
+	START=$(echo -n "$line" | cut -d',' -f1)
+	END=$(echo -n "$line" | cut -d',' -f2)
 	S_START=$(to_second "$START")
 	S_END=$(to_second "$END")
 	FFP="$FFP[0:v]trim=start=$S_START:end=$S_END,setpts=PTS-STARTPTS[v$INC];"
